@@ -1,0 +1,262 @@
+;; -*- mode: fundamental; coding: euc-jp -*-
+;; -*- mode: fundamental; coding: euc-jp -*-
+;; Large size dictionary for SKK system
+;; Copyright (C) 1988-1995, 1997, 1999-2004
+;;
+;; Masahiko Sato <masahiko@kuis.kyoto-u.ac.jp>
+;; Hironobu Takahashi <takahasi@tiny.or.jp>,
+;; Masahiro Doteguchi, Miki Inooka,
+;; Yukiyoshi Kameyama <kameyama@kuis.kyoto-u.ac.jp>,
+;; Akihiko Sasaki, Dai Ando, Junichi Okukawa,
+;; Katsushi Sato and Nobuhiro Yamagishi
+;; NAKAJIMA Mikio <minakaji@osaka.email.ne.jp>
+;; SKK Development Team <skk@ring.gr.jp>
+;;
+;; Maintainer: SKK Development Team <skk@ring.gr.jp>
+;; Version: $Id: SKK-JISYO.L,v 1.719 2006/09/30 00:05:46 minakaji Exp $
+;; Keywords: japanese
+;; Last Modified: $Date: 2006/09/30 00:05:46 $
+;;
+;; This dictionary is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation; either version 2, or
+;; (at your option) any later version.
+;;
+;; This dictionary is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with Daredevil SKK, see the file COPYING.  If not, write to
+;; the Free Software Foundation Inc., 59 Temple Place - Suite 330,
+;; Boston, MA 02111-1307, USA.
+;;
+;; ACKNOWLEDGEMENT
+;;
+;; この辞書は、SKK 原作者の佐藤雅彦先生が、第 1 版作成のために東北大学
+;; 電気通信研究所佐藤研究室 (当時) の学生さん達とともに scratch から作
+;; 成されたのをその起源とし、その後、無数のユーザからのユーザ辞書の提
+;; 供やフォームによる追加・校閲によって今尚日々メンテナンスされている日
+;; 本で最大規模の、GPL による copy free の辞書です。
+;;
+;; この辞書の作成にご尽力頂いた全ての方に感謝すると共に、これをお読み
+;; のあなたのご協力を是非ともお待ちしております。
+;;
+;;   http://openlab.ring.gr.jp/skk/registdic.cgi
+;;
+;; にアクセスし、フォームに是非あなたの新語・誤登録指摘・コメントを書
+;; いて下さい。
+;;
+;; また、実際に辞書の編集をしてみたいという方は、
+;;
+;;   http://openlab.ring.gr.jp/skk/cvs-ja.html#account
+;;
+;; をご覧の上、cvs account の発行申し込みをして下さい。
+;;
+;; 辞書の編集方針は skk/dic/READMEs/committers.txt をご参照下さい。
+;; そこに記載のない事項、またその変更については、その都度 SKK Openlab
+;; ML で話し合いで決められます。
+;;
+;; okuri-ari entries.
+をs /惜/
+わりあt /割り当/割当/
+わざわi /災/禍;(字義:落とし穴)/厄;<rare>/
+れんらくいたs /連絡致/
+よりきc /寄り切/
+よびだs /呼び出/呼出/
+よこばしr /横走/
+ゆるしあw /許し合/
+ゆきちがw /行き違/
+やりつk /遣り付/
+やせほそr /痩せ細/
+やm /止/辞;仕事を辞める/病/已;≒止む/熄;(字義:火が消える)/罷/辭;「辞」の旧字/
+ものおもi /物思/
+もったいぶr /勿体振/
+もえつk /燃え尽/
+めぶi /芽吹/
+めあたらs /目新/
+むさぼt /貪/
+みめよs /見目好/
+みなぎn /漲/
+みちがt /見違/
+みこn /見込/
+みp /見/観;(字義:みわたす) 映画を-/視;(字義:じっとみる) TVを-/診;(diagnose) 患者を診る/看;(nurse) 病母を看る/觀;「観」の旧字/
+まのあt /目の当/
+まちどおs /待ち遠/
+まくりあg /捲り上/
+まいもどt /舞い戻/
+ほろにがs /ほろ苦/
+ほっつきあるi /ほっつき歩/
+べんz /弁/
+ぶどまr /歩留/
+ふるいたc /奮い立/奮い起/
+ふゆばr /冬晴/
+ふしおがn /伏し拝/
+ふかs /深/蒸;芋を蒸す (NB:「むs」と同形)/更;夜を更す/潭;<rare>/
+ひらi /開/拓;処女地を拓く/啓;蒙を啓く/
+ひとまt /人待/
+ひっこしづかr /引越疲/
+ひきはらw /引き払/
+ひかr /光/
+ばかs /魅/
+はらt /払/拂;「払」の旧字(人名用漢字)/祓;悪霊を祓う/掃;ススを掃う/禳;≒祓う/
+はねのk /撥ね除/
+はずかしm /辱/
+はきちがe /履き違/
+はr /貼;(paste) 糊で貼る。「(チラシ|レッテル|URL)を-」/張;ピンと張る。「(弓|アンテナ|リンク)を-」/晴/腫;瞼が腫れる/脹;≒腫れる/霽;≒晴れる/膨;<rare> ≒腫れる (NB:「ふくr」と同形/
+のぼせあg /逆上せ上/
+のs /載;(物理的)机に載せる, (出版物)論文を載せる/乗/伸;餅を伸す/熨;アイロンで熨す/乘;「乗」の旧字(人名用漢字)/
+ねだr /強請/
+ねg /寝/寢;「寝」の旧字(人名用漢字)/
+ぬきさr /抜き去/
+になu /担/擔;「担」の旧字/
+にくおどn /肉踊/
+にk /煮/似/
+なめあc /舐め合/
+ななまがr /七曲/
+なげこn /投げ込/投込/
+ながれだs /流れ出/
+どろくさk /泥臭/
+とりまz /取り混/
+とりおk /取り置/
+とぶらh /弔/訪/
+ととのh /整/斉/調/
+ときあk /解き明/説き明/
+でまかs /出任/
+できa /出来/
+てひどg /手酷/
+ていせいいたs /訂正致/
+つるしあg /吊るし上/
+つまずi /躓/
+つっぱしn /突っ走/
+つくりつづk /作り続/
+つがc /番/
+つn /積/摘;花を摘む,鼻を摘まむ/詰/釣;魚を釣る/吊;吊るす/攣;足を攣る/
+ちちくりあw /乳繰り合/
+だれm /誰/
+たんせいこm /丹精込/
+たべつづk /食べ続/
+たっとn /尊/貴/
+ただたんn /只単/
+たしかめあe /確かめ合/
+たおt /手折;花を手折る/
+そりこn /剃り込/
+そうろu /候/
+せめさいなn /責め苛/
+せせらわらc /嘲笑/せせら笑/
+するどi /鋭/
+すてr /捨て;※送り位置補正/
+すぎさc /過ぎ去/
+じょうn /上/状/
+しんじつづk /信じ続/
+しょたいじm /所帯染/
+しゃしゃりでz /しゃしゃり出/
+しばたi /瞬/
+しったかぶr /知ったか振/
+しこうs /而/
+ざわt /騒/
+さとうづk /砂糖漬/
+さしかe /差し替/差し換/挿し替/
+さきn /先/
+;; okuri-nasi entries.
+#はく#か /#3泊#3日/
+>まよw /迷/
+allelopathy /アレロパシー/
+axe /アックス/アクス/
+blindtest /ブラインドテスト/
+canvas /キャンバス/カンバス/カンヴァス/
+class /クラス/
+crescendo /クレッシェンド/
+dios /ディオス/
+english /イングリッシュ/イギリス/英吉利/
+fondant /フォンダン/
+glycogen /グリコーゲン/
+heroine /ヒロイン/
+interval /インターバル/インタバル/
+knob /ノブ/
+lonely /ロンリー/ロンリィ/
+mcafee /マカフィー/
+motivation /モチベーション/
+oakley /オークリー/オークレー/
+pattern /パターン/パタン/
+pp /ピアニッシモ;pより弱く/pianissimo/
+remy /レミー/レミ/
+sanmarinogp /サンマリノGP;[F1]San Marino/
+singlesize /シングルサイズ/
+streetmusician /ストリートミュージシャン/
+thermometer /サーモメーター/
+uniq /ユニーク/
+witherspoon /ウィザースプーン/
+あかしば /赤芝/
+あずきもち /小豆餅/
+あらしやまびじゅつかん /嵐山美術館/
+いぎす /伊岐須/
+いたわり /労り/板割り/板割/功/
+いっとます /一斗枡/
+いよう /異様/医用/威容/偉容/
+うぐいすだに /鴬谷/
+うめはら /梅原/
+えいしょう /詠唱/永正;年号(1504-1521)/永承;年号(1046-1053)/
+えんしゅうべん /遠州弁/
+おおがわら /大河原/
+おくりたおし /送り倒し/
+おひるやすみ /お昼休み/
+おんなだて /女伊達/
+かいてんずし /回転寿司/
+かぎばり /鉤針/
+かささ /笠沙/
+かちょうおん /可聴音/
+かまたがわ /蒲田側/
+かわはぎ /皮剥/
+かんぜんげんていばん /完全限定版/
+がいせつえん /外接円/
+がらすこうげい /ガラス工芸/
+きしろ /木城/
+きのう /機能/昨日/帰納/帰農/既納;⇔未納/気嚢/
+きゅうせいこうこうせい /旧制高校生/
+きょうといがい /京都以外/
+きりふだてき /切札的/
+ぎじゅつじん /技術陣/
+くうけん /空拳/
+くみたてしき /組立式/
+ぐんまけんじん /群馬県人/
+けいひんきゅうこうせん /京浜急行線/
+けんきゅうひん /研究品/
+げっそう /月相/
+げんりしゅぎ /原理主義/
+こうこうていど /高校程度/
+こうつうじこししゃ /交通事故死者/
+こきむらさき /濃紫/
+こじんこじん /個人個人/個人々々/
+こみこみ /込み込み;[口]全ての費用を含んだ(価格)/
+ごかんべん /御勘弁/
+さいきがた /再帰型/
+さいゆうしゅうせんしゅしょう /最優秀選手賞/
+さちお /幸雄/幸夫/佐千男/
+さんこうもく /3項目/
+ざつさぎょう /雑作業/
+しげきやく /刺激薬/
+しっとうい /執刀医/
+しめきりまえ /締切前/
+しゅうきせつ /周期説/
+しゅじ /主事/朱字/主辞;head-word/主餌/
+しょうがくきん /奨学金/
+しょうらい /将来/生来/招来/松籟/請来/
+しようこうりつ /使用効率/
+しんごうまち /信号待ち/
+しんりげき /心理劇/
+じぜんがくしゅう /事前学習/
+じまん /自慢/
+じゅしんとも /受信共/
+じょうすいどう /上水道/
+じんこうかんみりょう /人工甘味料/
+すうしゃしゅ /数車種/
+ずいい /随意/
+せいじもくてき /政治目的/
+せいれいかっきん /精励恪勤/
+せつやくぶん /節約分/
+せんねん /専念/千年/先年/
+ぜんせんでんか /全線電化/
+そうじようぐ /掃除用具/
+そつぎょうご /卒業後/
