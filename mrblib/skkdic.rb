@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ### skkserv/skkdic.rb --- rskkserv module for skkdic format dictionary.
 
 ## Copyright (C) 1997-2000  Shugo Maeda
@@ -26,63 +27,75 @@
 
 ### Code:
 
-require "skkserv/logger"
+#require "skkserv/logger"
 
-begin
-  require "skkserv/skkdic.so"
-rescue LoadError
-  Logger::log(Logger::WARNING, "%s: %s", $0, $!)
-#  raise RuntimeError, "can't load `skkserv/skkdic.so'" # for DEBUG
-end
+#begin
+#  require "skkserv/skkdic.so"
+#rescue LoadError
+#  Logger::log(Logger::WARNING, "%s: %s", $0, $!)
+##  raise RuntimeError, "can't load `skkserv/skkdic.so'" # for DEBUG
+#end
 
 class SKKDic
-  include FileTest
+#  include FileTest
 
   OKURI_ARI_LABEL = ";; okuri-ari entries.\n"
   OKURI_NASI_LABEL = ";; okuri-nasi entries.\n"
-  OKURI_ARI_REGEXP = /[\xa1-\xfe][\xa1-\xfe].*[a-z] $/n
+#  OKURI_ARI_REGEXP = /[\xa1-\xfe][\xa1-\xfe].*[a-z] $/n
   
-  def initialize(path, cachedir, nocache)
+  def initialize(path, cachedir = nil, nocache = true)
     @path = path
-    @file = open(@path)
+#    @file = open(@path)
     
-    @cache_a = File.expand_path(File.basename(@path) + ".a", cachedir)
-    @cache_n = File.expand_path(File.basename(@path) + ".n", cachedir)
-    @nocache = nocache
-    @okuri_ari_regexp = OKURI_ARI_REGEXP
+#    @cache_a = File.expand_path(File.basename(@path) + ".a", cachedir)
+#    @cache_n = File.expand_path(File.basename(@path) + ".n", cachedir)
+#    @nocache = nocache
+#    @okuri_ari_regexp = OKURI_ARI_REGEXP
 
-    if !@nocache && new_cache?
-      @okuri_ari_table = read_cache(@cache_a)
-      @okuri_nasi_table = read_cache(@cache_n)
-      if @okuri_ari_table.nil? || @okuri_nasi_table.nil?
-	make_table
-      end
-    else
-      make_table
+#    if !@nocache && new_cache?
+#      @okuri_ari_table = read_cache(@cache_a)
+#      @okuri_nasi_table = read_cache(@cache_n)
+#      if @okuri_ari_table.nil? || @okuri_nasi_table.nil?
+#	make_table(path)
+#      end
+#    else
+#      make_table(path)
+#    end
+    @okuri_ari_table = []
+    @okuri_nasi_table = []
+    @skkdic_table = Hash.new
+    dict_data(path) do |mode, key, val|
+      val.map! {|i| Iconv.conv('UTF-8', 'EUC-JP', i)}
+      @skkdic_table[Iconv.conv('UTF-8', 'EUC-JP', key)] = val
     end
 
-    if SKKDic.respond_to?(:search)
-      @data = SKKDic.data(@path,
-			  @okuri_ari_table.pack("i*"),
-			  @okuri_nasi_table.pack("i*"))
-      @okuri_ari_table = nil
-      @okuri_nasi_table = nil
-      GC.start
+    # convert EUC-JP -> UTF-8
+#    @okuri_ari_table.reverse!
+#    @okuri_ari_table.map! {|i| Iconv.conv('UTF-8', 'EUC-JP', i)}
+#    @okuri_nasi_table.map! {|i| Iconv.conv('UTF-8', 'EUC-JP', i)}
 
-      @search = proc {|kana| SKKDic.search(kana, @data)}
-    else
-      @search = proc {|kana| search_rb(kana)}
-    end
+#    if SKKDic.respond_to?(:search)
+#      @data = SKKDic.data(@path,
+#			  @okuri_ari_table.pack("i*"),
+#			  @okuri_nasi_table.pack("i*"))
+#      @okuri_ari_table = nil
+#      @okuri_nasi_table = nil
+#      GC.start
+#
+#      @search = proc {|kana| SKKDic.search(kana, @data)}
+#    else
+#      @search = proc {|kana| search_rb(kana)}
+#    end
   end
-  
+
   def new_cache?
     return (exist?(@cache_a) &&  File.ctime(@path) < File.ctime(@cache_a)) &&
            (exist?(@cache_n) &&  File.ctime(@path) < File.ctime(@cache_n))
   end
 
-  def make_table
-    Logger::log(Logger::INFO,
-		"Making index table for dictionary \`%s\'...", @path)
+  def make_table_rb
+#    Logger::log(Logger::INFO,
+#		"Making index table for dictionary \`%s\'...", @path)
 
     @okuri_ari_table = []
     @okuri_nasi_table = []
@@ -107,7 +120,7 @@ class SKKDic
     end
     @okuri_nasi_table.pop
     
-    Logger::log(Logger::INFO, "done.")
+#    Logger::log(Logger::INFO, "done.")
 
     unless @nocache
       write_cache(@okuri_ari_table, @cache_a)
@@ -116,52 +129,71 @@ class SKKDic
   end
   
   def write_cache(table, file)
-    Logger::log(Logger::NOTICE, "Writing cache file \`%s\'...", file)
+#    Logger::log(Logger::NOTICE, "Writing cache file \`%s\'...", file)
 
     f = nil
     begin
       f = open(file, "w")
       f.write(table.pack("i*"))
     rescue
-      Logger::log(Logger::WARNING, "failed to write cache file \`%s\'.", file)
+ #     Logger::log(Logger::WARNING, "failed to write cache file \`%s\'.", file)
     ensure
       f.close if f
     end
-    Logger::log(Logger::NOTICE, "done.")
+  #  Logger::log(Logger::NOTICE, "done.")
   end
   
   def read_cache(file)
-    Logger::log(Logger::INFO, "Reading cache file \`%s\'...", file)
+#    Logger::log(Logger::INFO, "Reading cache file \`%s\'...", file)
 
     cache = nil
     open(file) do |f|
       cache = f.read.unpack("i*")
     end
 
-    Logger::log(Logger::INFO, "done")
+#    Logger::log(Logger::INFO, "done")
 
     return cache
   end
   
   def search(kana)
-    @search.call(kana + " ")
+    @skkdic_table[kana]
+#    ret = @skkdic_table[kana].split("/")
+#    ret.shift
+#    ret
   end
 
-  private
+  def search2(kana)
+    search_rb(kana + " ")
+#    @search.call(kana + " ")
+  end
+
+  def is_okuri_ari(kana)
+    if kana[0] == '>'
+      return false
+    end
+    if "abcdefghijklmnopqrstuvwxyz".split("").include?(kana[0])
+      return false
+    end
+    "abcdefghijklmnopqrstuvwxyz".split("").include?(kana[-2])
+  end
+
+#  private
   def search_rb(kana)
-    if kana =~ @okuri_ari_regexp
+#    if kana =~ @okuri_ari_regexp
+    if is_okuri_ari(kana)
       table = @okuri_ari_table
     else
       table = @okuri_nasi_table
     end
-    
     left = 0
     right = table.length - 1
     while left <= right
-      pos = (left + right) / 2
+      pos = ((left + right) / 2).to_i
 
-      @file.seek(table[pos], 0)
-      buff = @file.readline
+#      @file.seek(table[pos], 0)
+#      buff = @file.readline
+      buff = table[pos]
       case buff[0, kana.length] <=> kana
       when 0
 	return buff[kana.length + 1 .. -3].split("/")
