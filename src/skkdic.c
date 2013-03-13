@@ -33,14 +33,14 @@ mrb_skkdic_dict_data(mrb_state *mrb, mrb_value self)
 		    continue;
 	       }
 	       cstr = strtok(line, " ");
-	       argv[1] = mrb_str_new2(mrb, cstr);
+	       argv[1] = mrb_str_new_cstr(mrb, cstr);
 	       cstr = strtok(NULL, " ");
 	       p = strtok(cstr, "/");
 
 	       table = mrb_ary_new(mrb);
 	       while (p != NULL) {
 		    int ai2 = mrb_gc_arena_save(mrb);
-		    mrb_ary_push(mrb, table, mrb_str_new2(mrb, p));
+		    mrb_ary_push(mrb, table, mrb_str_new_cstr(mrb, p));
 		    p = strtok(NULL, "/");
 		    mrb_gc_arena_restore(mrb, ai2);
 	       }
@@ -98,11 +98,11 @@ mrb_skkdic_make_table(mrb_state *mrb, mrb_value self)
 	       if (okuri_pos == 1) {
 		    // okuri_ari
 		    mrb_ary_push(mrb, okuri_ari_table,
-				 mrb_str_new2(mrb, line));
+				 mrb_str_new_cstr(mrb, line));
 	       } else if(okuri_pos == 2) {
 		    // okuri_nasi
 		    mrb_ary_push(mrb, okuri_nasi_table,
-				 mrb_str_new2(mrb, line));
+				 mrb_str_new_cstr(mrb, line));
 	       }
 	       mrb_gc_arena_restore(mrb, ai);
 	  }
