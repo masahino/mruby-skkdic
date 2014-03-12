@@ -108,9 +108,9 @@ mrb_skkdic_make_table(mrb_state *mrb, mrb_value self)
 	  }
      }
      mrb_iv_set(mrb, self, 
-		mrb_intern(mrb, "@okuri_ari_table"), okuri_ari_table);
+		mrb_intern_lit(mrb, "@okuri_ari_table"), okuri_ari_table);
      mrb_iv_set(mrb, self, 
-		mrb_intern(mrb, "@okuri_nasi_table"), okuri_nasi_table);
+		mrb_intern_lit(mrb, "@okuri_nasi_table"), okuri_nasi_table);
      return self;
 }
 
