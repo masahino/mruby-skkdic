@@ -1,6 +1,8 @@
 MRuby::Gem::Specification.new('mruby-skkdic') do |spec|
   spec.license = 'GPL'
   spec.authors = ''
+  spec.add_dependency('mruby-iconv')
+  spec.add_test_dependency('mruby-io')
  
   # Add compile flags
   # spec.cc.flags << ''

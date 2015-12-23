@@ -118,9 +118,9 @@ void
 mrb_mruby_skkdic_gem_init(mrb_state* mrb) {
      struct RClass *skkdic = mrb_define_class(mrb, "SKKDic", mrb->object_class);
      mrb_define_method(mrb, skkdic, "make_table", 
-		       mrb_skkdic_make_table, ARGS_REQ(1));
+		       mrb_skkdic_make_table, MRB_ARGS_REQ(1));
      mrb_define_method(mrb, skkdic, "dict_data", 
-		       mrb_skkdic_dict_data, ARGS_REQ(2));
+		       mrb_skkdic_dict_data, MRB_ARGS_REQ(2));
 }
 
 void

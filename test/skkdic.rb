@@ -4,7 +4,7 @@ assert('mruby-skkdic 1') do
 end
 
 assert('mruby-skkdic 2') do
-  skkdic = SKKDic.new("mruby-skkdic/test/test-jisyo.txt")
+  skkdic = SKKDic.new(File.dirname(__FILE__) + "/test-jisyo.txt")
   skkdic.search('をs') == ['惜']
   skkdic.search('ふるいたc') == ['奮い立', '奮い起']
   skkdic.search('さきn') == ['先']
@@ -16,13 +16,13 @@ assert('mruby-skkdic 2') do
 end
 
 assert('mruby-skkdic 3') do
-  skkdic = SKKDic.new("mruby-skkdic/test/test-jisyo.txt")
+  skkdic = SKKDic.new(File.dirname(__FILE__) + "/test-jisyo.txt")
   skkdic.is_okuri_ari('') == false
   skkdic.is_okuri_ari('ruby') == false
   skkdic.is_okuri_ari('あるk') == false
 end
 
 assert('mruby-skkdic 4') do
-  skkdic = SKKDic.new("mruby-skkdic/test/test-jisyo.txt")
+  skkdic = SKKDic.new(File.dirname(__FILE__) + "/test-jisyo.txt")
   skkdic.respond_to? :to_s
 end
